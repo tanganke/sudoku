@@ -2,6 +2,8 @@ from typing import List, Optional
 import rich
 import rich.console
 
+__all__ = ["is_entry_valid", "is_valid_solution", "print_solution"]
+
 
 def is_entry_valid(
     sudoku: List[List[int]], i: int, j: int, val: Optional[int] = None
@@ -94,7 +96,9 @@ def print_solution(sudoku: List[List[int]]) -> None:
         for j, val in enumerate(row):
             if j % 3 == 0 and j != 0:
                 console.print("| ", end="")
-            if val == 0 or not is_entry_valid(sudoku, i, j):
+            if val == 0:
+                console.print(f"[blue]{val}[/blue] ", end="")
+            elif not is_entry_valid(sudoku, i, j):
                 console.print(f"[red]{val}[/red] ", end="")
             else:
                 console.print(f"[green]{val}[/green] ", end="")
