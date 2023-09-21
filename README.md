@@ -7,7 +7,7 @@ A Python package for solving Sudoku puzzles.
 You can install the `sudoku` package using pip:
 
 ```bash
-pip install .
+pip install git+https://github.com/tanganke/sudoku.git
 ```
 
 ## License
